@@ -30,10 +30,9 @@ public class MainCotxe {
 		cH.setCilindres(entrada.nextInt());
 		System.out.print("Introdueix els kW del motor: ");
 		cH.setkW(Integer.parseInt(entrada.next()));
-		cH.calcPotenciaFiscal();
 		System.out.println("");
 		System.out.println("El " + cH.marca + " " + cH.model + " té " + 
-				String.valueOf(cH.potenciaFiscal) + " cavalls fiscals");
+				cH.calcPotenciaFiscal() + " cavalls fiscals");
 		entrada.close();
 	}
 

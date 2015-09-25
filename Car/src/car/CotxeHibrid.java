@@ -3,6 +3,16 @@ package car;
 public class CotxeHibrid extends Cotxe {
 	
 	int kW;
+	
+	// Constructor
+	public CotxeHibrid(){
+		
+	}
+	
+	public CotxeHibrid(String marca, String model, int cilindrada, int cilindres, int kW) {
+		super(marca, model, cilindrada, cilindres);
+		this.kW = kW;
+	}
 
 	public int getkW() {
 		return kW;

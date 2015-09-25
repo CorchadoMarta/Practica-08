@@ -8,6 +8,20 @@ public class Cotxe {
 	int cilindres;
 	double potenciaFiscal;
 	
+	// Constructor
+	
+	public Cotxe () {
+		
+	}
+	
+	public Cotxe(String marca, String model, int cilindrada, int cilindres) {
+		this.marca = marca;
+		this.model = model;
+		this.cilindrada = cilindrada;
+		this.cilindres = cilindres;
+		this.potenciaFiscal = calcPotenciaFiscal();
+	}
+	
 	public String getMarca() {
 		return marca;
 	}
@@ -40,7 +54,7 @@ public class Cotxe {
 	}
 	
 	public double calcPotenciaFiscal () {
-		return 0.08 * this.cilindres * Math.pow(this.cilindrada/this.cilindres, 0.6);
+		return (0.08 * this.cilindres * Math.pow(this.cilindrada/this.cilindres, 0.6));
 	}
 
 }
