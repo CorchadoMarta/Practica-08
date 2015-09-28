@@ -53,7 +53,6 @@ public class Ex8_2ArrayList {
 		// For-each
 		for (Cotxe c : llistatCotxes) {
 			System.out.println(c);
-			;
 		}
 
 		// Iterator
