@@ -56,5 +56,11 @@ public class Cotxe {
 	public double calcPotenciaFiscal () {
 		return (0.08 * this.cilindres * Math.pow(this.cilindrada/this.cilindres, 0.6));
 	}
+	
+	// Imprimeix les dades d'un dels cotxes
+		public String toString(){
+			return "El " + this.getMarca() + " " + this.getModel() + ", amb " + this.getCilindrada() + " de cilindrada y " 
+							+ this.getCilindres() + " cilindres, té " + this.calcPotenciaFiscal() + " cavalls fiscals.";
+		}
 
 }
