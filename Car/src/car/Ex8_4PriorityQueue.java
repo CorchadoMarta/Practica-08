@@ -23,9 +23,11 @@ public class Ex8_4PriorityQueue {
 
 		// 2: Create a priority queue
 		PriorityQueue<CotxeComparable> prioQueue = new PriorityQueue<CotxeComparable>();
+		PriorityQueue<CotxeComparable> prioQueue2 = new PriorityQueue<CotxeComparable>();
 		// Introduim els valors a la priority queue
 		for (CotxeComparable c : lifoAutos) {
 			prioQueue.offer(c);
+			prioQueue2.offer(c);
 		}
 		// Compare
 		while (!prioQueue.isEmpty()){
@@ -37,12 +39,7 @@ public class Ex8_4PriorityQueue {
 		fifoAutos.addLast(new CotxeComparable("Fiat", "Panda", 900, 2));
 		prioQueue.offer(new CotxeComparable("Fiat", "Panda", 900, 2));
 		
-		// Create a new queue
-		PriorityQueue<CotxeComparable> prioQueue2 = new PriorityQueue<CotxeComparable>();
-		// Introduim els valors a la priority queue
-		for (CotxeComparable c : lifoAutos) {
-			prioQueue2.offer(c);
-		}
+		
 		int count = 1;
 		// 4: Show lifo and fifo queues sorted
 		while (!prioQueue2.isEmpty()){
