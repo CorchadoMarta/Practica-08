@@ -45,7 +45,7 @@ public class Ex8_3LinkedList {
 			}
 		}
 		System.out.println(posicions);
-
+		System.out.println("===================");
 		// Iterator
 		Iterator<Cotxe> k = llistatCotxes.iterator();
 		while (k.hasNext()) {

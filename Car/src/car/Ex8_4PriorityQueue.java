@@ -35,19 +35,26 @@ public class Ex8_4PriorityQueue {
 		}
 		
 		// 3: Insert a new car
-		lifoAutos.addFirst(new CotxeComparable("Fiat", "Panda", 900, 2));
-		fifoAutos.addLast(new CotxeComparable("Fiat", "Panda", 900, 2));
+		lifoAutos.offerFirst(new CotxeComparable("Fiat", "Panda", 900, 2));
+		fifoAutos.offerLast(new CotxeComparable("Fiat", "Panda", 900, 2));
 		prioQueue.offer(new CotxeComparable("Fiat", "Panda", 900, 2));
 		
 		
 		int count = 1;
 		// 4: Show lifo and fifo queues sorted
+		System.out.println("----FIFO--------");
+		while (!fifoAutos.isEmpty()){
+			System.out.println(fifoAutos.pollFirst());
+		}
+		System.out.println("----LIFO--------");
+		while (!lifoAutos.isEmpty()){
+			System.out.println(lifoAutos.pollLast());
+		}
+		System.out.println("----PRIORITY QUEUE--------");
 		while (!prioQueue2.isEmpty()){
-			System.out.println(count++);
-			System.out.println(lifoAutos.pollFirst());
-			System.out.println(fifoAutos.pollLast());
 			System.out.println(prioQueue2.poll());
 		}
+		
 		
 		// 5: Posa un exemple de la vida real de cadascun dels dos tipus de cues.
 		// Exemple de cua FIFO és la cua a la peixateria.
