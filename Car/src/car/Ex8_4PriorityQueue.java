@@ -44,8 +44,8 @@ public class Ex8_4PriorityQueue {
 		// 4: Show lifo and fifo queues sorted
 		while (!prioQueue2.isEmpty()){
 			System.out.println(count++);
-			System.out.println(lifoAutos.poll());
-			System.out.println(fifoAutos.poll());
+			System.out.println(lifoAutos.pollFirst());
+			System.out.println(fifoAutos.pollLast());
 			System.out.println(prioQueue2.poll());
 		}
 		
