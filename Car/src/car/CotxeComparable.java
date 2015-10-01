@@ -1,7 +1,11 @@
 package car;
 
 public class CotxeComparable extends Cotxe implements Comparable<Object>{
-
+	
+	public CotxeComparable(String marca, String model, int cilindrada, int cilindres) {
+		super(marca, model, cilindrada, cilindres);
+	}
+	
 	@Override
 	public int compareTo(Object obj) {
 		// Create a car
