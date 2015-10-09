@@ -8,13 +8,28 @@ import java.util.Map.Entry;
 public class Ex8_9Metodos {
 
 	public static class Metodos {
-		public static void removeCar(SortedMap<String, Cotxe> mapa, int cilindrada) {
+		
+		//Metode que elimina cotxes dintre d'un SortedMap amb una cilindrada concreta
+		public static boolean removeCar(SortedMap<String, Cotxe> mapa, int cilindrada) {
+			// Creem un arraylist per a guardar les claus que cumpleixin la condició
 			ArrayList<String> clau = new ArrayList<String>();
+			// Recorrem el mapa
 			for (Entry<String, Cotxe> entry : mapa.entrySet()) {
+				// si la cilindrada del cotxe a mirar es major o igual a la que busquem la guardem a l'array
 				if (entry.getValue().getCilindrada() >= cilindrada) {
-					clau = entry.getKey();
-					mapa.remove(clau);
+					clau.add(entry.getKey());
 				}
+			}
+			// Si el tamany de la clau es diferent a cero
+			if (clau.size() != 0) {
+				// Recorem el array
+				for (String p : clau) {
+					// eliminem el cotxe amb aquella clau del mapa
+					mapa.remove(p);
+				}
+				return true;
+			} else {
+				return false;
 			}
 		}
 
@@ -32,11 +47,11 @@ public class Ex8_9Metodos {
 			mapCar.put(new String("9216 CKK"), new Cotxe("Hyundai", "Accent", 2000, 4));
 
 			// Eliminem els cotxes amb cilindrada superior a 2500
-			Metodos.removeCar(mapCar, 2500);
-			
+			System.out.println(Metodos.removeCar(mapCar, 2500));
+
 			// Imprimeix tots els cotxes
 			for (Entry<String, Cotxe> entry : mapCar.entrySet()) {
-				 System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
+				System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
 			}
 		}
 	}
