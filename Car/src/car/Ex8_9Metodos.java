@@ -2,27 +2,43 @@ package car;
 
 import java.util.SortedMap;
 import java.util.TreeMap;
+import java.util.ArrayList;
+import java.util.Map.Entry;
 
 public class Ex8_9Metodos {
-	
-	public static void main(String[] args) {
-		// 1: Crear un sortedMap amb els cotxes
-		SortedMap<String, Cotxe> mapCar = new TreeMap<String, Cotxe>();
-		// 2: Add Items to the TreeMap
-		mapCar.put(new String("1234 AAA"), new Cotxe("Alfa Romeo", "Giulia", 2900, 6));
-		mapCar.put(new String("2321 BBB"), new Cotxe("Seat", "Ibiza", 1200, 3));
-		mapCar.put(new String("8232 FFF"), new Cotxe("Ford", "Focus", 2000, 4));
-		mapCar.put(new String("3311 FFF"), new Cotxe("Ford", "Mondeo", 2200, 4));
-		mapCar.put(new String("9381 LLL"), new Cotxe("Seat", "Leon", 1600, 4));
-		mapCar.put(new String("B 9011 XC"), new Cotxe("Hyundai", "Atos", 1500, 3));
-		mapCar.put(new String("9234 BHG"), new Cotxe("Hyundai", "Santa Fe", 3000, 6));
-		mapCar.put(new String("9216 CKK"), new Cotxe("Hyundai", "Accent", 2000, 4));
-	}
-	
-	public static class Metodos{
-		public boolean removeCar(SortedMap<String, Cotxe> mapa, int cilindrada){
+
+	public static class Metodos {
+		public static void removeCar(SortedMap<String, Cotxe> mapa, int cilindrada) {
+			ArrayList<String> clau = new ArrayList<String>();
+			for (Entry<String, Cotxe> entry : mapa.entrySet()) {
+				if (entry.getValue().getCilindrada() >= cilindrada) {
+					clau = entry.getKey();
+					mapa.remove(clau);
+				}
+			}
+		}
+
+		public static void main(String[] args) {
+			// 1: Crear un sortedMap amb els cotxes
+			SortedMap<String, Cotxe> mapCar = new TreeMap<String, Cotxe>();
+			// 2: Add Items to the TreeMap
+			mapCar.put(new String("1234 AAA"), new Cotxe("Alfa Romeo", "Giulia", 2900, 6));
+			mapCar.put(new String("2321 BBB"), new Cotxe("Seat", "Ibiza", 1200, 3));
+			mapCar.put(new String("8232 FFF"), new Cotxe("Ford", "Focus", 2000, 4));
+			mapCar.put(new String("3311 FFF"), new Cotxe("Ford", "Mondeo", 2200, 4));
+			mapCar.put(new String("9381 LLL"), new Cotxe("Seat", "Leon", 1600, 4));
+			mapCar.put(new String("B 9011 XC"), new Cotxe("Hyundai", "Atos", 1500, 3));
+			mapCar.put(new String("9234 BHG"), new Cotxe("Hyundai", "Santa Fe", 3000, 6));
+			mapCar.put(new String("9216 CKK"), new Cotxe("Hyundai", "Accent", 2000, 4));
+
+			// Eliminem els cotxes amb cilindrada superior a 2500
+			Metodos.removeCar(mapCar, 2500);
 			
-			return false;
+			// Imprimeix tots els cotxes
+			for (Entry<String, Cotxe> entry : mapCar.entrySet()) {
+				 System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
+			}
 		}
 	}
+
 }
