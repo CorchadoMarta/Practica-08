@@ -21,9 +21,11 @@ public class Ex8_8SortedMap {
 		mapCar.put(new String("9216 CKK"), new Cotxe("Hyundai", "Accent", 2000, 4));
 		
 		// 3: Pots afegir duplictats?
-		mapCar.put(new String("9234 BHG"), new Cotxe("Hyundai", "Santa Fe", 3000, 6));
-		mapCar.put(new String("9235 BHG"), new Cotxe("Hyundai", "Santa Fe", 3000, 6));
-		System.out.println("Només podem afedir duplicats si la clau és diferent.");
+		Cotxe prova = mapCar.put(new String("9234 BHG"), new Cotxe("Hyundai", "Santa Fe", 3000, 6));
+		if (prova != null){
+			System.out.println("Només podem afedir duplicats si la clau és diferent.");
+		}
+
 		System.out.println(" ");
 		
 		

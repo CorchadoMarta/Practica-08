@@ -19,8 +19,9 @@ public class Ex8_9Metodos {
 		mapCar.put(new String("9216 CKK"), new Cotxe("Hyundai", "Accent", 2000, 4));
 	}
 	
-	public static class metodos{
-		public boolean removeCar(){
+	public static class Metodos{
+		public boolean removeCar(SortedMap<String, Cotxe> mapa, int cilindrada){
+			
 			return false;
 		}
 	}
